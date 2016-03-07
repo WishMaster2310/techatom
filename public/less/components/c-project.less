@@ -1,0 +1,51 @@
+.c-project {
+	display: table;
+	width: 100%;
+	text-decoration: none;
+	color: inherit;
+	margin-bottom: 5px;
+
+	&__img {
+		display: table-cell;
+		vertical-align: top;
+		width: 145px;
+
+		img {
+			display: block;
+			width: 100%;
+			border: 2px solid #d5dadd;
+		}
+	}
+
+	&__data {
+		display: table-cell;
+		vertical-align: top;
+		padding: 5px 10px 5px 10px;
+		font-size: 13px;
+	}
+
+	&__name {
+		margin-bottom: 3px;
+		font-weight: 500;
+	}
+
+	&__addr {
+		font-style: italic;
+	}
+
+	&-list {
+	}
+
+	&:hover &__name  {
+		color: @green;
+		text-decoration: underline;
+	}
+
+	&:hover &__img img {
+		border-color: @green;
+	}
+
+	&:hover &__data {
+		background-color: #f6f7f8;
+	}
+}

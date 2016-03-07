@@ -1,0 +1,64 @@
+html {
+	font-size: 14px;
+}
+
+body {
+	min-width: @container;
+	font-family: 'Fira Sans', sans-serif;
+	color: @base-color;
+	font-size: 14px;
+	line-height: round(20/14, 3);
+}
+
+
+* {
+	box-sizing: border-box;
+
+	&:before,
+	&:after {
+		box-sizing: border-box;
+	}
+}
+
+.c-h1 {
+	font-size: 48px;
+	line-height: 1;
+}
+
+.c-h2 {
+	font-size: 24px;
+	text-transform: uppercase;
+	font-weight: 500;
+	line-height: 1;
+	margin: 0 0 25px 0;
+}
+
+.c-row {
+	margin-left: -10px;
+	margin-right: -10px;
+	&:before,
+	&:after  {
+		display: table;
+    content: " ";
+
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+.c-col {
+	float: left;
+	width: 33.333%;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	&--wide {
+		width: 66.666%;
+	}
+
+	&--extra-padding-right {
+		padding-right: 30px;
+	}
+}

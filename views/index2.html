@@ -1,0 +1,81 @@
+{%- set services  = [{name: "Дизайнер любит плохую &laquo;рыбу&raquo;", img: "services-img-1.png"}, {name: "Название услуги обычно длиннее", img: "services-img-1.png"}, {name: "Название услуги", img: "services-img-3.png"}, {name: "Название услуги", img: "services-img-1.png"}, {name: "Название услуги", img: "services-img-1.png"}, {name: "Название услуги", img: "services-img-3.png"}, {name: "Название услуги", img: "services-img-3.png"}, {name: "Название услуги", img: "services-img-1.png"}, {name: "Название услуги обычно длиннее", img: "services-img-1.png"}, {name: "Название услуги", img: "services-img-3.png"} ]-%}
+{%- set projects = [
+	{
+		name: "Название проекта",
+		addr: "г. Казань, ул. Ленина, д. 4",
+		text: "Перечень проводимых работ",
+		img: "project-1.jpg"
+	},
+	{
+		name: "Название проекта",
+		addr: "г. Казань, ул. Ленина, д. 4",
+		text: "Перечень проводимых работ",
+		img: "project-1.jpg"
+	},
+	{
+		name: "Название проекта",
+		addr: "г. Казань, ул. Ленина, д. 4",
+		text: "Перечень проводимых работ",
+		img: "project-1.jpg"
+	}
+] -%}
+{%- extends "__layout.html" %}
+{% block content %}
+	{% include "__components/c-slider.html" %}
+	<div class="c-container">
+		<div class="c-row">
+			<div class="c-col c-col--wide">
+				<h2 class="c-h2">О компании</h2>
+				<p class="u-mb20">Сегодня атомная отрасль России представляет собой мощный комплекс из более чем 250 предприятий и организаций, в которых занято свыше 190 тыс. человек. В структуре отрасли — четыре крупных научно-производственных комплекса: предприятия ядерно-топливного цикла, атомной энергетики, ядерно-оружейного комплекса и научно-исследовательские институты. Кроме того, после включения в состав Госкорпорации «Росатом» ФГУП «Атомфлот» сюда же можно включить самый мощный в мире ледокольный флот.</p>
+				<p class="u-mb40"><a href="#" class="c-skewbtn"><span class="c-skewbtn__inner">Подробнее</span></a></p>
+		
+				<h2 class="c-h2">Услуги</h2>
+				<ul class="c-service-list">
+					{%- for item in services %}
+					{% if loop.index < 10 %}
+					<li class="c-service-list__item">
+						<a href="#" class="c-service">
+							<div class="c-service__icon">
+								<div class="c-service__icon-bg">
+									<img src="/images/{{ item.img }}" alt="" class="c-service__icon-img">
+								</div>
+							</div>
+							<div class="c-service__data">{{ item.name|safe }}</div>
+						</a>
+					</li>
+					{%- endif -%}
+					{% endfor -%}
+				</ul>
+			</div>
+			<div class="c-col">
+				<h2 class="c-h2">Наши проекты</h2>
+				<div class="c-project-list u-mb20">
+					{% for project in projects %}
+						<a class="c-project" href="#">
+							<div class="c-project__img">
+								<img src="/images/{{ project.img }}" alt="{{ project.name }}">
+							</div>
+							<div class="c-project__data">
+								<div class="c-project__name">{{ project.name }}</div>
+								<div class="c-project__addr">{{ project.addr }}</div>
+								<div class="c-project__text">{{ project.text }}</div>
+							</div>
+						</a>
+					{% endfor %}
+				</div>
+				<a href="#" class="c-skewbtn"><span class="c-skewbtn__inner">Все проекты</span></a>
+			</div>
+		</div>
+	</div>
+	
+	<script src="/javascripts/slick.min.js"></script>
+	<script>
+	$(function() {
+		$('.c-slider').slick({
+			dots: true,
+			nextArrow: "<div class=\"c-slider__arrow c-slider__arrow--next\"></div>",
+			prevArrow: "<div class=\"c-slider__arrow c-slider__arrow--prev\"></div>"
+		})
+	})
+	</script>
+{% endblock  %}

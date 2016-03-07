@@ -1,0 +1,30 @@
+{%- set slider = [
+{
+	content: "<div class=\"c-h1 c-slider__title\">Поставка и монтаж <br><span class=\"u-green\">автоматизированных систем</span></div> <div class=\"c-slider__label\"><span class=\"c-slider__label-normalize\">на объекты атомной отрасли</span></div>",
+	img: "slider.jpg"
+},
+{
+	content: "<div class=\"c-h1 c-slider__title\">Поставка и монтаж <br><span class=\"u-green\">автоматизированных систем</span></div> <div class=\"c-slider__label\"><span class=\"c-slider__label-normalize\">на объекты атомной отрасли</span></div>",
+	img: "slider.jpg"
+},
+{
+	content: "<div class=\"c-h1 c-slider__title\">Поставка и монтаж <br><span class=\"u-green\">автоматизированных систем</span></div> <div class=\"c-slider__label\"><span class=\"c-slider__label-normalize\">на объекты атомной отрасли</span></div>",
+	img: "slider.jpg"
+},
+{
+	content: "<div class=\"c-h1 c-slider__title\">Поставка и монтаж <br><span class=\"u-green\">автоматизированных систем</span></div> <div class=\"c-slider__label\"><span class=\"c-slider__label-normalize\">на объекты атомной отрасли</span></div>",
+	img: "slider.jpg"
+}
+]-%}
+
+<div class="c-slider">
+	{% for item in slider %}
+		<div class="c-slider__item" style="background-image:  url(images/{{ item.img }})">
+			<div class="c-slider__content">
+				<div class="c-slider__content-centroid">
+					{{ item.content|safe }}
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>

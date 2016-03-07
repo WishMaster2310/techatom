@@ -1,0 +1,25 @@
+.c-skewbtn {
+	height: 36px;
+	padding: 8px 20px 0 20px;
+	background-color: @green;
+	color: #fff;
+	display: inline-block;
+	vertical-align: middle;
+	transform: skewX(-20deg) translateX(9px);
+	text-decoration: none;
+
+	&__inner {
+		display: inline-block;
+		text-decoration: underline;
+		transform: skewX(20deg);
+	}
+
+
+	&:hover  {
+		background-color: darken(@green, 10%);
+	}
+
+	&:hover &__inner {
+		text-decoration: none;
+	}
+}
